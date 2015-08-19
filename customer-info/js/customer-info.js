@@ -24,7 +24,15 @@ function getCustomerInfo() {
 		},
 		success: function(dataFromServer) {
 
-			alert(dataFromServer);
+		// Create an ul
+		var ul = $('<ul>');
+
+		// Insert the data 
+		$(ul).append('<li>'+dataFromServer.phone+'</li>');
+		$(ul).append('<li>'+dataFromServer.email+'</li>');
+
+		// add this new unorderd list to the customer-info div
+		$('#customer-info').html(ul);
 
 		},
 		error: function(){
